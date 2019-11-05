@@ -41,7 +41,8 @@ void print_type(char const my_char, va_list args)
 
     if (my_char == 'd') {
         my_int = va_arg(args, int);
-        my_put_nbr(my_int);
+        char *tmp = my_int_to_strnum(my_int);
+        my_putstr(tmp);
     }
     if (my_char == '%')
         my_putchar('%');

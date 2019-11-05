@@ -11,19 +11,23 @@ SRC			= 	$(addprefix $(SRC_D), $(SRC_F))
 OBJ 		= 	$(SRC:.c=.o)
 SRC_D 		= 	lib/my/
 SRC_F 		= 	my_printf.c \
-				my_put_nbr.c \
 				my_putchar.c \
 				my_putstr.c \
 				my_revstr.c \
 				my_strlen.c \
+				my_intlen.c \
+				my_get_denominator.c \
 				my_is_format_id.c \
+				my_int_to_strnum.c \
 				my_decimal_to_binary.c \
+				my_char_to_octal.c
 
 SRC_UT   	=	$(addprefix $(SRC_UT_D), $(SRC_UT_F))
 OBJ_UT 	 	=	$(SRC_UT:.c=.o)
 SRC_UT_D 	= 	tests/
 SRC_UT_F 	= 	test_my_is_format_id.c \
-				test_my_decimal_to_binary.c
+				test_my_decimal_to_binary.c \
+				test_my_char_to_octal.c
 
 INC			= 	-I./include/
 

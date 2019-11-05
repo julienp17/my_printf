@@ -10,6 +10,9 @@
 
     #include <stdarg.h>
 
+    #define MY_EXIT_SUCCESS     0
+    #define MY_EXIT_FAILURE     84
+
     void my_putchar(char my_char);
     void my_putstr(char const *str);
 

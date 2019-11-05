@@ -5,7 +5,7 @@
 ## Makefile
 ##
 
-CC 			= 	gcc
+CC 			= 	c99
 
 SRC			= 	$(addprefix $(SRC_D), $(SRC_F))
 OBJ 		= 	$(SRC:.c=.o)

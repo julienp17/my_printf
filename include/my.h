@@ -21,4 +21,5 @@
     int my_put_nbr(int nb);
 
     char *my_revstr(char *str);
+    char *my_int_to_strnum(int nb);
 #endif

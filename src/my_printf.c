@@ -14,7 +14,8 @@
 
 #include <stdarg.h>
 #include "my.h"
-#include "my_printf.h"
+
+void print_type(char const my_char, va_list args);
 
 int my_printf(char const *format, ...)
 {

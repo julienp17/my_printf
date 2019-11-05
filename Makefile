@@ -42,30 +42,24 @@ NAME_UT 	= 	unit_tests
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@echo -ne "\e[1;32mCompiling library $(NAME)... \e[0m"
-	@ar rc $(NAME) $(OBJ)
-	@echo -e "\e[1;32mdone\e[0m"
+	@echo -e "\e[1;32mCompiling library $(NAME)... \e[0m"
+	ar rc $(NAME) $(OBJ)
 
 tests_run: $(OBJ) $(OBJ_UT)
-	@echo -ne "\e[1;32mCompiling $(NAME_UT) binary... \e[0m"
-	@$(CC) -o $(NAME_UT) $(OBJ) $(OBJ_UT) $(LDFLAGS_UT)
-	@echo -e "\e[1;32mdone\e[0m"
+	@echo -e "\e[1;32mCompiling $(NAME_UT) binary... \e[0m"
+	$(CC) -o $(NAME_UT) $(OBJ) $(OBJ_UT) $(CFLAGS) $(LDFLAGS_UT)
 	@./$(NAME_UT)
 
 clean:
-	@echo -ne "\e[1;32mRemoving source object files... \e[0m"
-	@rm -f $(OBJ)
-	@echo -e "\e[1;32mdone\e[0m"
-	@echo -ne "\e[1;32mRemoving unit_tests object files... \e[0m"
-	@rm -f $(OBJ_UT)
-	@echo -e "\e[1;32mdone\e[0m"
+	@echo -e "\e[1;32mRemoving source object files...\e[0m"
+	rm -f $(OBJ)
+	@echo -e "\e[1;32mRemoving unit_tests object files... \e[0m"
+	rm -f $(OBJ_UT)
 
 fclean: clean
-	@echo -ne "\e[1;32mRemoving $(NAME) binary... \e[0m"
-	@rm -f $(NAME)
-	@echo -e "\e[1;32mdone\e[0m"
-	@echo -ne "\e[1;32mRemoving $(NAME_UT) binary... \e[0m"
-	@rm -f $(NAME_UT)
-	@echo -e "\e[1;32mdone\e[0m"
+	@echo -e "\e[1;32mRemoving $(NAME) binary...\e[0m"
+	rm -f $(NAME)
+	@echo -e "\e[1;32mRemoving $(NAME_UT) binary... \e[0m"
+	rm -f $(NAME_UT)
 
 re: fclean all

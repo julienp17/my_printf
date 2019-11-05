@@ -51,6 +51,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@echo -e "\e[1;32mCompiling library $(NAME)... \e[0m"
 	ar rc $(NAME) $(OBJ)
+	cp $(NAME) ./lib
 
 tests_run: $(OBJ) $(OBJ_UT)
 	@echo -e "\e[1;32mCompiling $(NAME_UT) binary... \e[0m"

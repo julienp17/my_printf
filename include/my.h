@@ -20,4 +20,5 @@
     int my_strlen(char const *str);
     int my_put_nbr(int nb);
 
+    char *my_revstr(char *str);
 #endif

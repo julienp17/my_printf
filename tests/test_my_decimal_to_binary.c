@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2019
 ** my_printf
 ** File description:
-** Unit tests for convertion to binary base
+** Unit tests for decimal convertion to binary base
 */
 
 #include <stddef.h>

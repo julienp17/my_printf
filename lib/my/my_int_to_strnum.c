@@ -6,12 +6,14 @@
 */
 
 #include <stdlib.h>
+#include <stdarg.h>
 
 int my_intlen(int nb);
 int my_get_denominator(int const nb);
 
-char *my_int_to_strnum(int nb)
+char *my_int_to_strnum(va_list args)
 {
+    int nb = va_arg(args, int);
     int i = 0;
     int denominator = my_get_denominator(nb);
     char *strnum = malloc(sizeof(char) * (my_intlen(nb) + 1));

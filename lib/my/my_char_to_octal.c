@@ -7,7 +7,7 @@
 
 #include <stdlib.h>
 #include "bases.h"
-#include <stdio.h>
+
 char *my_char_to_octal(unsigned char my_char)
 {
     char *octal = malloc(sizeof(char) * (OCTAL_MAX_LEN + 1));

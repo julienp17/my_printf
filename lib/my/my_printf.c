@@ -19,17 +19,15 @@ void print_type(char const my_char, va_list args);
 
 int my_printf(char const *format, ...)
 {
-    int i = 0;
     va_list args;
 
     va_start(args, format);
-    while (format[i]) {
+    for (int i = 0 ; format[i] ; i = i + 1) {
         if (format[i] == '%') {
             print_type(format[(i + 1)], args);
             i = i + 1;
         } else
             my_putchar(format[i]);
-        i = i + 1;
     }
     va_end(args);
     return (0);

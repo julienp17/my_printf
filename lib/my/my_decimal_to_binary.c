@@ -7,11 +7,12 @@
 
 #include <stddef.h>
 #include <stdlib.h>
+#include "bases.h"
 #include "my.h"
 
 char *my_decimal_to_binary(unsigned int decimal)
 {
-    char *binary = malloc(sizeof(char) * (32 + 1));
+    char *binary = malloc(sizeof(char) * (BINARY_MAX_DIGITS + 1));
     int digit = 0;
 
     if (decimal == 0)

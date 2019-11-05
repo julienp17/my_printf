@@ -10,8 +10,9 @@
 #include "bases.h"
 #include "my.h"
 
-char *my_decimal_to_binary(unsigned int decimal)
+char *my_decimal_to_binary(va_list args)
 {
+    unsigned int decimal = va_arg(args, unsigned int);
     char *binary = malloc(sizeof(char) * (BINARY_MAX_DIGITS + 1));
     int digit = 0;
 

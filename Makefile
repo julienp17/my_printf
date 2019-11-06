@@ -33,9 +33,11 @@ SRC_F 		= 	my_printf.c \
 SRC_UT   	=	$(addprefix $(SRC_UT_D), $(SRC_UT_F))
 OBJ_UT 	 	=	$(SRC_UT:.c=.o)
 SRC_UT_D 	= 	tests/
-SRC_UT_F 	= 	test_my_is_format_id.c \
+SRC_UT_F 	= 	test_my_intlen.c \
+				test_my_is_format_id.c \
 				test_my_decimal_to_binary.c \
-				test_my_char_to_octal.c
+				test_my_char_to_octal.c \
+				test_my_printf_no_args.c \
 
 INC			= 	-I./include/
 

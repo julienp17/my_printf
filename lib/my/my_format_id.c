@@ -30,6 +30,7 @@ format_id_t my_get_format_id(char my_char)
         {'d', &my_int_to_strnum}, {'i', &my_int_to_strnum},
         {'s', &my_arg_to_str},
         {'S', &my_np_to_str},
+        {'u', &my_uint_to_strnum},
         {'%', &my_percentage_to_str},
         {'o', &my_decimal_to_octal}
     };

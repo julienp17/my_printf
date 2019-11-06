@@ -26,6 +26,7 @@ SRC_F 		= 	my_printf.c \
 				my_get_denominator.c \
 				my_format_id.c \
 				my_int_to_strnum.c \
+				my_uint_to_strnum.c \
 				my_decimal_to_binary.c \
 				my_char_to_octal.c \
 				my_puterr.c \

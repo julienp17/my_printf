@@ -35,5 +35,6 @@
     char *my_percentage_to_str(va_list args);
     char *my_np_to_str(va_list args);
     char *my_int_to_strnum(va_list arg);
+    char *my_uint_to_strnum(va_list arg);
     char *my_decimal_to_octal(va_list args);
 #endif

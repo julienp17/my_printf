@@ -23,6 +23,7 @@ bool my_is_format_id(char my_char)
 
 format_id_t my_get_format_id(char my_char)
 {
+    int i = 0;
     format_id_t const formats[] = {
         {'b', &my_decimal_to_binary},
         {'c', &my_char_to_str},
@@ -33,8 +34,6 @@ format_id_t my_get_format_id(char my_char)
         {'o', &my_decimal_to_octal}
     };
 
-    for (int i = 0 ; i < FORMATS_ID_NB ; i = i + 1)
-        if (my_char == formats[i].symbol)
-            return (formats[i]);
-    return (formats[5]);
+    for (; i < FORMATS_ID_NB && my_char != formats[i].symbol ; i = i + 1);
+    return (formats[i]);
 }

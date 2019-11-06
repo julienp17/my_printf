@@ -13,7 +13,7 @@
 char *my_decimal_to_binary(va_list args)
 {
     unsigned int decimal = va_arg(args, unsigned int);
-    char *binary = malloc(sizeof(char) * (BINARY_MAX_DIGITS + 1));
+    char *binary = malloc(sizeof(char) * (BINARY_MAX_LEN + 1));
     int digit = 0;
 
     if (decimal == 0)

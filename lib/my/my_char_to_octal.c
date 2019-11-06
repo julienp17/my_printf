@@ -10,7 +10,7 @@
 
 char *my_char_to_octal(char my_char)
 {
-    char *octal = malloc(sizeof(char) * (OCTAL_MAX_LEN + 1));
+    char *octal = malloc(sizeof(char) * (OCTAL_CHAR_MAX_LEN + 1));
 
     octal[0] = '\\';
     for (int i = 3 ; i > 0 ; i = i - 1) {

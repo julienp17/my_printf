@@ -86,7 +86,7 @@ Test(my_decimal_to_binary, ten_thousand, .init = cr_redirect_stdout)
 Test(my_decimal_to_binary, uint_max, .init = cr_redirect_stdout)
 {
     unsigned int decimal = UINT_MAX;
-    char expected[] = "11111111111111111111111111111111";
+    char expected[] = "111111111111111111111111111111111";
 
     my_printf("%b", decimal);
     cr_assert_stdout_eq_str(expected);

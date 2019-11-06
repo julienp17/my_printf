@@ -22,6 +22,7 @@
 
     int my_printf(const char *restrict format, ...);
     int my_strlen(char const *str);
+    int my_intlen(int nb);
     int my_put_nbr(int nb);
 
     char *my_revstr(char *str);

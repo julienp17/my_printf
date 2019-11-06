@@ -8,6 +8,7 @@
 #ifndef __DEF_BASES__
     #define __DEF_BASES__
 
-    #define BINARY_MAX_DIGITS       32
-    #define OCTAL_MAX_LEN           4
+    #define BINARY_MAX_LEN          32
+    #define OCTAL_CHAR_MAX_LEN      4
+    #define OCTAL_UINT_MAX_LEN       11
 #endif

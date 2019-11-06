@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2019
 ** my_printf
 ** File description:
-** Converts an unsigned integer into an hexadecimal string
+** Converts an unsigned integer into an hexadecimal lowercase string
 */
 
 #include <stddef.h>
@@ -10,10 +10,10 @@
 #include "bases.h"
 #include "my.h"
 
-char *my_decimal_to_hexa(va_list args)
+char *my_decimal_to_hexa_lower(va_list args)
 {
     unsigned int decimal = va_arg(args, unsigned int);
-    char base[] = "0123456789abcdef";
+    char base[] = HEXA_LOWER;
     char *hexa = malloc(sizeof(char) * (HEXA_MAX_LEN + 1));
     int digit = 0;
 

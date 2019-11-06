@@ -37,5 +37,6 @@
     char *my_uint_to_strnum(va_list arg);
     char *my_decimal_to_binary(va_list args);
     char *my_decimal_to_octal(va_list args);
-    char *my_decimal_to_hexa(va_list args);
+    char *my_decimal_to_hexa_lower(va_list args);
+    char *my_decimal_to_hexa_upper(va_list args);
 #endif

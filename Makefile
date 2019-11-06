@@ -18,7 +18,8 @@ SRC_F 		= 	my_printf.c \
 				my_np_to_str.c \
 				my_strcat.c \
 				my_decimal_to_octal.c \
-				my_decimal_to_hexa.c \
+				my_decimal_to_hexa_lower.c \
+				my_decimal_to_hexa_upper.c \
 				my_putchar.c \
 				my_putstr.c \
 				my_revstr.c \
@@ -48,7 +49,8 @@ SRC_UT_F 	= 	test_my_intlen.c \
 				test_my_char_to_str.c \
 				test_my_arg_to_str.c \
 				test_my_decimal_to_octal.c \
-				test_my_decimal_to_hexa.c \
+				test_my_decimal_to_hexa_lower.c \
+				test_my_decimal_to_hexa_upper.c \
 				test_my_np_to_str.c
 
 INC			= 	-I./include/

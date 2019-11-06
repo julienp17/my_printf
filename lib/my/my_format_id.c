@@ -31,7 +31,7 @@ format_id_t my_get_format_id(char my_char)
         {'S', &my_np_to_str},
         {'%', &my_percentage_to_str}
     };
-    for (int i = 0 ; i < 7 ; i = i + 1)
+    for (int i = 0 ; i < FORMATS_ID_NB ; i = i + 1)
         if (my_char == formats[i].symbol)
             return (formats[i]);
     return (formats[5]);

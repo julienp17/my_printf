@@ -20,6 +20,8 @@ char *my_int_to_strnum(va_list args)
     bool is_neg = false;
     char *strnum = malloc(sizeof(char) * (my_intlen(nb) + 2));
 
+    if (nb == 0)
+        return ("0");
     if (nb == INT_MIN)
         return ("-2147483648");
     is_neg = check_is_neg(&nb);

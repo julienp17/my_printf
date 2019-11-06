@@ -39,12 +39,23 @@ SRC_UT_F 	= 	test_my_intlen.c \
 				test_my_decimal_to_binary.c \
 				test_my_char_to_octal.c \
 				test_my_printf_no_args.c \
+				test_my_uint_to_strnum.c \
+				test_my_strcat.c \
+				test_my_puterr.c \
+				test_my_percentage_to_str.c \
+				test_my_is_printable.c \
+				test_my_int_to_strnum.c \
+				test_my_char_to_str.c \
+				test_my_arg_to_str.c \
+				test_my_decimal_to_octal.c \
+				test_my_decimal_to_hexa.c \
+				test_my_np_to_str.c
 
 INC			= 	-I./include/
 
 CFLAGS		= 	-W -Wall -Wextra -Werror $(INC)
 
-LDFLAGS_UT	= 	-lcriterion --coverage
+LDFLAGS_UT	= 	-lcriterion -lgcov --coverage
 
 NAME 		= 	libmy.a
 
@@ -60,9 +71,9 @@ $(NAME): $(OBJ)
 tests_run: clean $(OBJ) $(OBJ_UT)
 	@echo -e "\e[1;32mCompiling $(NAME_UT) binary... \e[0m"
 	$(CC) -o $(NAME_UT) $(SRC) $(SRC_UT) $(CFLAGS) $(LDFLAGS_UT)
+	@./$(NAME_UT)
 	rm -f $(SRC_UT_F:.c=.gcda)
 	rm -f $(SRC_UT_F:.c=.gcno)
-	@./$(NAME_UT)
 
 clean:
 	@echo -e "\e[1;32mRemoving source object files...\e[0m"
@@ -72,6 +83,9 @@ clean:
 	rm -f $(SRC_F:.c=.gcno)
 	@echo -e "\e[1;32mRemoving unit_tests object files... \e[0m"
 	rm -f $(OBJ_UT)
+	@echo -e "\e[1;32mRemoving unit_tests coverage files...\e[0m"
+	rm -f $(SRC_UT_F:.c=.gcda)
+	rm -f $(SRC_UT_F:.c=.gcno)
 
 fclean: clean
 	@echo -e "\e[1;32mRemoving $(NAME) binary...\e[0m"

@@ -32,7 +32,8 @@ format_id_t my_get_format_id(char my_char)
         {'S', &my_np_to_str},
         {'u', &my_uint_to_strnum},
         {'%', &my_percentage_to_str},
-        {'o', &my_decimal_to_octal}
+        {'o', &my_decimal_to_octal},
+        {'x', &my_decimal_to_hexa}, {'X', &my_decimal_to_hexa},
     };
 
     for (; i < FORMATS_ID_NB && my_char != formats[i].symbol ; i = i + 1);

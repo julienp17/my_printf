@@ -29,12 +29,13 @@
     char *my_char_to_octal(char my_char);
     char *my_strcat(char *dest, char const *src);
 
-    char *my_decimal_to_binary(va_list args);
     char *my_char_to_str(va_list args);
     char *my_arg_to_str(va_list args);
     char *my_percentage_to_str(va_list args);
     char *my_np_to_str(va_list args);
     char *my_int_to_strnum(va_list arg);
     char *my_uint_to_strnum(va_list arg);
+    char *my_decimal_to_binary(va_list args);
     char *my_decimal_to_octal(va_list args);
+    char *my_decimal_to_hexa(va_list args);
 #endif

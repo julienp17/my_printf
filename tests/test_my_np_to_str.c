@@ -32,7 +32,7 @@ Test(my_np_to_str, one_np_char, .init = cr_redirect_stdout)
 Test(my_np_to_str, three_np_char, .init = cr_redirect_stdout)
 {
     char str[] = "hello this is normal string talking";
-    char expected[] = "hello th\\004s is norm\\031l string tal\\137ing";
+    char expected[] = "hello th\\004s is norm\\037l string tal\\177ing";
 
     str[8] = 4;
     str[18] = 31;

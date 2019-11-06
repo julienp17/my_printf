@@ -29,8 +29,10 @@ format_id_t my_get_format_id(char my_char)
         {'d', &my_int_to_strnum}, {'i', &my_int_to_strnum},
         {'s', &my_arg_to_str},
         {'S', &my_np_to_str},
-        {'%', &my_percentage_to_str}
+        {'%', &my_percentage_to_str},
+        {'o', &my_decimal_to_octal}
     };
+
     for (int i = 0 ; i < FORMATS_ID_NB ; i = i + 1)
         if (my_char == formats[i].symbol)
             return (formats[i]);

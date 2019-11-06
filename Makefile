@@ -24,7 +24,6 @@ SRC_F 		= 	my_printf.c \
 				my_revstr.c \
 				my_strlen.c \
 				my_intlen.c \
-				my_get_denominator.c \
 				my_format_id.c \
 				my_int_to_strnum.c \
 				my_uint_to_strnum.c \
@@ -58,14 +57,19 @@ $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 	cp $(NAME) ./lib
 
-tests_run: $(OBJ) $(OBJ_UT)
+tests_run: clean $(OBJ) $(OBJ_UT)
 	@echo -e "\e[1;32mCompiling $(NAME_UT) binary... \e[0m"
-	$(CC) -o $(NAME_UT) $(OBJ) $(OBJ_UT) $(CFLAGS) $(LDFLAGS_UT)
+	$(CC) -o $(NAME_UT) $(SRC) $(SRC_UT) $(CFLAGS) $(LDFLAGS_UT)
+	rm -f $(SRC_UT_F:.c=.gcda)
+	rm -f $(SRC_UT_F:.c=.gcno)
 	@./$(NAME_UT)
 
 clean:
 	@echo -e "\e[1;32mRemoving source object files...\e[0m"
 	rm -f $(OBJ)
+	@echo -e "\e[1;32mRemoving source coverage files...\e[0m"
+	rm -f $(SRC_F:.c=.gcda)
+	rm -f $(SRC_F:.c=.gcno)
 	@echo -e "\e[1;32mRemoving unit_tests object files... \e[0m"
 	rm -f $(OBJ_UT)
 

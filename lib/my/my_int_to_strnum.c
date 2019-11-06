@@ -6,28 +6,40 @@
 */
 
 #include <stdlib.h>
+#include <limits.h>
 #include <stdarg.h>
+#include <stdbool.h>
+#include "my.h"
 
-int my_intlen(int nb);
-int my_get_denominator(int const nb);
+static bool check_is_neg(int *nb);
 
 char *my_int_to_strnum(va_list args)
 {
     int nb = va_arg(args, int);
     int i = 0;
-    int denominator = my_get_denominator(nb);
-    char *strnum = malloc(sizeof(char) * (my_intlen(nb) + 1));
+    bool is_neg = false;
+    char *strnum = malloc(sizeof(char) * (my_intlen(nb) + 2));
 
-    if (nb < 0) {
-        strnum[i] = '-';
-        nb = nb * -1;
-        i = i + 1;
+    if (nb == INT_MIN)
+        return ("-2147483648");
+    is_neg = check_is_neg(&nb);
+    for (; nb != 0 ; i = i + 1) {
+        strnum[i] = nb % 10 + '0';
+        nb = nb / 10;
     }
-    while (denominator > 0) {
-        strnum[i] = nb / denominator % 10 + '0';
-        denominator = denominator / 10;
+    if (is_neg) {
+        strnum[i] = '-';
         i = i + 1;
     }
     strnum[i] = '\0';
-    return (strnum);
+    return (my_revstr(strnum));
+}
+
+static bool check_is_neg(int *nb)
+{
+    if (*nb < 0) {
+        *nb = *nb * -1;
+        return (true);
+    }
+    return (false);
 }

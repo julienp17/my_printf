@@ -19,8 +19,7 @@ int my_printf(char const *format, ...)
 
     va_start(args, format);
     for (int i = 0 ; format[i] ; i = i + 1)
-        if (print_token(format, &i, args) == MY_EXIT_FAILURE)
-            return (MY_EXIT_FAILURE);
+        print_token(format, &i, args);
     va_end(args);
     return (0);
 }

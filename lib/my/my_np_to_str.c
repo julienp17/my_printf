@@ -19,7 +19,7 @@ char *my_np_to_str(va_list args)
     for (int i = 0, j = 0 ; org_str[j] ; i = i + 1, j = j + 1) {
         if (!my_is_printable(org_str[j])) {
             str[i] = '\0';
-            str = my_strcat(str, my_char_to_octal(org_str[i]));
+            str = my_strcat(str, my_char_to_octal(org_str[j]));
             i = i + 3;
         } else
             str[i] = org_str[j];

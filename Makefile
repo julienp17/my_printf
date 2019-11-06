@@ -17,6 +17,7 @@ SRC_F 		= 	my_printf.c \
 				my_is_printable.c \
 				my_np_to_str.c \
 				my_strcat.c \
+				my_decimal_to_octal.c \
 				my_putchar.c \
 				my_putstr.c \
 				my_revstr.c \

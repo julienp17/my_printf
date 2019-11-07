@@ -39,4 +39,6 @@
     char *my_decimal_to_octal(va_list args);
     char *my_decimal_to_hexa_lower(va_list args);
     char *my_decimal_to_hexa_upper(va_list args);
+    char *my_ptr_to_hexa_lower(va_list args);
+    char *my_ptr_to_hexa_upper(va_list args);
 #endif

@@ -11,8 +11,8 @@
     #include <stdarg.h>
     #include <stdbool.h>
 
-    #define FORMATS_ID        "bcdisSuxX%o"
-    #define FORMATS_ID_NB      11
+    #define FORMATS_ID        "bcdisSuxX%opP"
+    #define FORMATS_ID_NB      13
 
     #define UNKNOWN_ID_MSG    "Unknown format identifer\n"
 

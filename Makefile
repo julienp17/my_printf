@@ -31,6 +31,8 @@ SRC_F 		= 	my_printf.c \
 				my_decimal_to_binary.c \
 				my_char_to_octal.c \
 				my_puterr.c \
+				my_ptr_to_hexa_lower.c \
+				my_ptr_to_hexa_upper.c \
 
 SRC_UT   	=	$(addprefix $(SRC_UT_D), $(SRC_UT_F))
 OBJ_UT 	 	=	$(SRC_UT:.c=.o)

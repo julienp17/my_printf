@@ -53,7 +53,9 @@ SRC_UT_F 	= 	test_my_intlen.c \
 				test_my_decimal_to_octal.c \
 				test_my_decimal_to_hexa_lower.c \
 				test_my_decimal_to_hexa_upper.c \
-				test_my_np_to_str.c
+				test_my_np_to_str.c \
+				test_my_ptr_to_hexa_lower.c \
+				test_my_ptr_to_hexa_upper.c \
 
 INC			= 	-I./include/
 

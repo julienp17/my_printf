@@ -19,7 +19,7 @@ char *my_ptr_to_hexa_upper(va_list args)
     int i = 0;
 
     if (address == 0)
-        return ("0");
+        return ("(nil)");
     for (i = 0 ; address > 0 ; i = i + 1) {
         digit = address % 16;
         hexa[i] = base[digit];

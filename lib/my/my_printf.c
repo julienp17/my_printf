@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2019
 ** my_printf
 ** File description:
-** Reproduce the printf function from the C library, respecting C99 standard
+** Reproduce the printf function in accordance to the C99 standard
 */
 
 #include <stdarg.h>
@@ -11,7 +11,7 @@
 #include "format_id.h"
 
 int print_token(char const *format, int *i, va_list args);
-void print_type(char const my_char, va_list args);
+int print_type(char const my_char, va_list args);
 
 int my_printf(char const *format, ...)
 {
@@ -29,12 +29,13 @@ int print_token(char const *format, int *i, va_list args)
     if (format[*i] == '%' && my_is_format_id(format[(*i + 1)])) {
         print_type(format[(*i + 1)], args);
         *i = *i + 1;
-    } else
+    } else {
         my_putchar(format[*i]);
+    }
     return (MY_EXIT_SUCCESS);
 }
 
-void print_type(char const my_char, va_list args)
+int print_type(char const my_char, va_list args)
 {
     char *str = NULL;
     format_id_t id;
@@ -42,4 +43,5 @@ void print_type(char const my_char, va_list args)
     id = my_get_format_id(my_char);
     str = id.convertion(args);
     my_putstr(str);
+    return (my_strlen(str));
 }

@@ -11,28 +11,29 @@ SRC			= 	$(addprefix $(SRC_D), $(SRC_F))
 OBJ 		= 	$(SRC:.c=.o)
 SRC_D 		= 	lib/my/
 SRC_F 		= 	my_printf.c \
-				my_char_to_str.c \
-				my_arg_to_str.c \
-				my_percentage_to_str.c \
-				my_is_printable.c \
-				my_np_to_str.c \
 				my_strcat.c \
-				my_decimal_to_octal.c \
-				my_decimal_to_hexa_lower.c \
-				my_decimal_to_hexa_upper.c \
 				my_putchar.c \
 				my_putstr.c \
 				my_revstr.c \
 				my_strlen.c \
 				my_intlen.c \
 				my_format_id.c \
-				my_int_to_strnum.c \
-				my_uint_to_strnum.c \
-				my_decimal_to_binary.c \
-				my_char_to_octal.c \
 				my_puterr.c \
-				my_ptr_to_hexa_lower.c \
-				my_ptr_to_hexa_upper.c \
+				booleans/my_is_printable.c \
+				booleans/my_is_int_converter.c \
+				converters/my_arg_to_str.c \
+				converters/my_char_to_str.c \
+				converters/my_char_to_octal.c \
+				converters/my_decimal_to_binary.c \
+				converters/my_int_to_strnum.c \
+				converters/my_uint_to_strnum.c \
+				converters/my_decimal_to_octal.c \
+				converters/my_decimal_to_hexa_lower.c \
+				converters/my_decimal_to_hexa_upper.c \
+				converters/my_np_to_str.c \
+				converters/my_ptr_to_hexa_lower.c \
+				converters/my_ptr_to_hexa_upper.c \
+
 
 SRC_UT   	=	$(addprefix $(SRC_UT_D), $(SRC_UT_F))
 OBJ_UT 	 	=	$(SRC_UT:.c=.o)
@@ -45,7 +46,6 @@ SRC_UT_F 	= 	test_my_intlen.c \
 				test_my_uint_to_strnum.c \
 				test_my_strcat.c \
 				test_my_puterr.c \
-				test_my_percentage_to_str.c \
 				test_my_is_printable.c \
 				test_my_int_to_strnum.c \
 				test_my_char_to_str.c \

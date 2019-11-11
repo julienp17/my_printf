@@ -16,11 +16,15 @@ SRC_F 		= 	my_printf.c \
 				my_putstr.c \
 				my_revstr.c \
 				my_strlen.c \
+				my_strdup.c \
+				my_strstr.c \
 				my_intlen.c \
-				my_format_id.c \
+				my_strcmp.c \
+				my_converter_specifier.c \
 				my_puterr.c \
-				booleans/my_is_printable.c \
+				booleans/my_is_converter.c \
 				booleans/my_is_int_converter.c \
+				booleans/my_is_printable.c \
 				converters/my_arg_to_str.c \
 				converters/my_char_to_str.c \
 				converters/my_char_to_octal.c \
@@ -59,9 +63,11 @@ SRC_UT_F 	= 	test_my_intlen.c \
 
 INC			= 	-I./include/
 
-CFLAGS		= 	-W -Wall -Wextra -Werror $(INC)
+CFLAGS		= 	-W -Wall -Wextra -Werror $(INC) $(DBFLAGS)
 
 LDFLAGS_UT	= 	-lcriterion -lgcov --coverage
+
+DBFLAGS		=	-g -g3 -ggdb
 
 NAME 		= 	libmy.a
 

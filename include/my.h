@@ -18,16 +18,21 @@
     void my_putstr(char const *str);
     void my_puterr(char const *str);
 
+    bool my_is_converter(char my_char);
+    bool my_is_int_converter(char my_char);
     bool my_is_printable(char const my_char);
 
     int my_printf(const char *restrict format, ...);
     int my_strlen(char const *str);
     int my_intlen(int nb);
     int my_put_nbr(int nb);
+    int my_strcmp(char const *s1, char const *s2);
 
     char *my_revstr(char *str);
     char *my_char_to_octal(char my_char);
     char *my_strcat(char *dest, char const *src);
+    char *my_strdup(char const *src);
+    char *my_strstr(char const *str, char const *to_find);
 
     char *my_char_to_str(va_list args);
     char *my_arg_to_str(va_list args);

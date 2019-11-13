@@ -1,0 +1,47 @@
+/*
+** EPITECH PROJECT, 2019
+** C Pool EvalExpr
+** File description:
+** Converts an integer into a numerical string
+*/
+
+#include <stdlib.h>
+#include <limits.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include "my.h"
+#include "bases.h"
+
+static bool check_is_neg(long long int *nb);
+
+char *my_llint_to_strnum(va_list args)
+{
+    long long int nb = va_arg(args, long long int);
+    int i = 0;
+    bool is_neg = false;
+    char *strnum = malloc(sizeof(char) * (LLINT_MAX_LEN + 2));
+
+    if (nb == 0)
+        return ("0");
+    is_neg = check_is_neg(&nb);
+    while (nb != 0) {
+        strnum[i] = nb % 10 + '0';
+        nb = nb / 10;
+        i = i + 1;
+    }
+    if (is_neg) {
+        strnum[i] = '-';
+        i = i + 1;
+    }
+    strnum[i] = '\0';
+    return (my_revstr(strnum));
+}
+
+static bool check_is_neg(long long int *nb)
+{
+    if (*nb < 0) {
+        *nb = *nb * -1;
+        return (true);
+    }
+    return (false);
+}

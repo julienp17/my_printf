@@ -10,56 +10,64 @@ CC 			= 	c99
 SRC			= 	$(addprefix $(SRC_D), $(SRC_F))
 OBJ 		= 	$(SRC:.c=.o)
 SRC_D 		= 	lib/my/
-SRC_F 		= 	my_printf.c \
-				my_strcat.c \
+SRC_F 		=	my_get_converter_specifier.c \
+				my_get_length_modifier.c \
+				my_intlen.c \
 				my_putchar.c \
+				my_puterr.c \
 				my_putstr.c \
 				my_revstr.c \
-				my_strlen.c \
-				my_strdup.c \
-				my_strstr.c \
-				my_intlen.c \
+				my_strcat.c \
 				my_strcmp.c \
-				my_converter_specifier.c \
-				my_puterr.c \
+				my_strdup.c \
+				my_strlen.c \
+				my_strstr.c \
+				my_printf.c \
 				booleans/my_is_converter.c \
 				booleans/my_is_int_converter.c \
+				booleans/my_is_int_signed_converter.c \
+				booleans/my_is_int_unsigned_converter.c \
 				booleans/my_is_printable.c \
+				booleans/my_str_isnum_neg.c \
+				booleans/my_str_isnum_pos.c \
+				booleans/my_str_isnum.c \
 				converters/my_arg_to_str.c \
-				converters/my_char_to_str.c \
 				converters/my_char_to_octal.c \
+				converters/my_char_to_str.c \
 				converters/my_decimal_to_binary.c \
-				converters/my_int_to_strnum.c \
-				converters/my_uint_to_strnum.c \
-				converters/my_decimal_to_octal.c \
 				converters/my_decimal_to_hexa_lower.c \
 				converters/my_decimal_to_hexa_upper.c \
+				converters/my_decimal_to_octal.c \
+				converters/my_int_to_strnum.c \
 				converters/my_np_to_str.c \
 				converters/my_ptr_to_hexa_lower.c \
 				converters/my_ptr_to_hexa_upper.c \
+				converters/my_uint_to_strnum.c \
+				length_modifiers/my_llint_to_strnum.c \
+				length_modifiers/my_lluint_to_strnum.c \
 
 
 SRC_UT   	=	$(addprefix $(SRC_UT_D), $(SRC_UT_F))
 OBJ_UT 	 	=	$(SRC_UT:.c=.o)
 SRC_UT_D 	= 	tests/
 SRC_UT_F 	= 	test_my_intlen.c \
-				test_my_is_format_id.c \
-				test_my_decimal_to_binary.c \
 				test_my_char_to_octal.c \
 				test_my_printf_no_args.c \
-				test_my_uint_to_strnum.c \
 				test_my_strcat.c \
 				test_my_puterr.c \
-				test_my_is_printable.c \
-				test_my_int_to_strnum.c \
-				test_my_char_to_str.c \
-				test_my_arg_to_str.c \
-				test_my_decimal_to_octal.c \
-				test_my_decimal_to_hexa_lower.c \
-				test_my_decimal_to_hexa_upper.c \
-				test_my_np_to_str.c \
-				test_my_ptr_to_hexa_lower.c \
-				test_my_ptr_to_hexa_upper.c \
+				booleans/test_my_is_printable.c \
+				booleans/test_my_is_converter.c \
+				converters/test_my_arg_to_str.c \
+				converters/test_my_char_to_str.c \
+				converters/test_my_decimal_to_binary.c \
+				converters/test_my_decimal_to_hexa_lower.c \
+				converters/test_my_decimal_to_hexa_upper.c \
+				converters/test_my_decimal_to_octal.c \
+				converters/test_my_int_to_strnum.c \
+				converters/test_my_np_to_str.c \
+				converters/test_my_ptr_to_hexa_lower.c \
+				converters/test_my_ptr_to_hexa_upper.c \
+				converters/test_my_uint_to_strnum.c \
 
 INC			= 	-I./include/
 

@@ -10,6 +10,8 @@
 
     #define BINARY_MAX_LEN          32
     #define UINT_MAX_LEN            10
+    #define LLINT_MAX_LEN           19
+    #define LLUINT_MAX_LEN          20
     #define OCTAL_CHAR_MAX_LEN      4
     #define OCTAL_UINT_MAX_LEN      11
     #define HEXA_MAX_LEN            8

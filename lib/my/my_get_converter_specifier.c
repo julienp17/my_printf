@@ -8,10 +8,10 @@
 #include "converters.h"
 #include "my.h"
 
-struct converter_specifier my_get_converter_specifier(char my_char)
+converter_t my_get_converter_specifier(char my_char)
 {
     int i = 0;
-    struct converter_specifier const converters[] = {
+    converter_t const converters[] = {
         {'b', &my_decimal_to_binary},
         {'c', &my_char_to_str},
         {'d', &my_int_to_strnum}, {'i', &my_int_to_strnum},

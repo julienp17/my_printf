@@ -23,11 +23,12 @@ char *my_llint_to_strnum(va_list args)
 
     if (nb == 0)
         return ("0");
+    if (nb == LLONG_MIN)
+        return ("-9223372036854775808");
     is_neg = check_is_neg(&nb);
-    while (nb != 0) {
+    for (; nb != 0 ; i = i + 1) {
         strnum[i] = nb % 10 + '0';
         nb = nb / 10;
-        i = i + 1;
     }
     if (is_neg) {
         strnum[i] = '-';

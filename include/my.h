@@ -21,6 +21,12 @@
     bool my_is_converter(char my_char);
     bool my_is_int_converter(char my_char);
     bool my_is_printable(char const my_char);
+    bool my_is_int_converter(char my_char);
+    bool my_is_int_signed_converter(char my_char);
+    bool my_is_int_unsigned_converter(char my_char);
+    bool my_str_isnum(char const *str);
+    bool my_str_isnum_pos(char const *str);
+    bool my_str_isnum_neg(char const *str);
 
     int my_printf(const char *restrict format, ...);
     int my_strlen(char const *str);
@@ -46,4 +52,7 @@
     char *my_decimal_to_hexa_upper(va_list args);
     char *my_ptr_to_hexa_lower(va_list args);
     char *my_ptr_to_hexa_upper(va_list args);
+
+    char *my_llint_to_strnum(va_list args);
+    char *my_lluint_to_strnum(va_list args);
 #endif

@@ -15,6 +15,8 @@
 #include "flags.h"
 #include "length_modifiers.h"
 
+#include <stdio.h>
+
 int my_print_tokens(char **format_string, va_list args);
 char *my_get_formatted_string(char *format, va_list args);
 char *my_get_format(char const *format_string);
@@ -58,11 +60,17 @@ char *my_get_format(char const *format_string)
     char *format = malloc(sizeof(char) * (my_strlen(format_string) + 1));
     int i = 0;
 
+    format[0] = '%';
+    format_string = format_string + 1;
     while (format_string[i] && !my_is_converter(format_string[i])) {
-        format[i] = format_string[i];
+        format[i + 1] = format_string[i];
         i = i + 1;
     }
-    format[i] = '\0';
+    if (my_is_converter(format_string[i])) {
+        format[i + 1] = format_string[i];
+        i = i + 1;
+    }
+    format[i + 1] = '\0';
     return (format);
 }
 
@@ -72,7 +80,7 @@ char *my_get_formatted_string(char *format, va_list args)
     converter_t converter;
     char *(*length_modifier)(va_list);
 
-    if (!my_is_converter(format[my_strlen(format)]))
+    if (!my_is_converter(format[my_strlen(format) - 1]))
         return (format);
     format = format + 1;
     converter = my_get_converter_specifier(format[my_strlen(format) - 1]);
@@ -83,15 +91,4 @@ char *my_get_formatted_string(char *format, va_list args)
     if (length_modifier)
         return (length_modifier(args));
     return (formatted_string);
-}
-
-int print_type(char const my_char, va_list args)
-{
-    char *str = NULL;
-    struct converter_specifier converter;
-
-    converter = my_get_converter_specifier(my_char);
-    str = converter.convertion(args);
-    my_putstr(str);
-    return (my_strlen(str));
 }

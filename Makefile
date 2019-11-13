@@ -40,6 +40,7 @@ SRC_F 		=	my_get_converter_specifier.c \
 				converters/my_decimal_to_octal.c \
 				converters/my_int_to_strnum.c \
 				converters/my_np_to_str.c \
+				converters/my_percentage_to_str.c \
 				converters/my_ptr_to_hexa_lower.c \
 				converters/my_ptr_to_hexa_upper.c \
 				converters/my_uint_to_strnum.c \
@@ -65,6 +66,7 @@ SRC_UT_F 	= 	test_my_intlen.c \
 				converters/test_my_decimal_to_octal.c \
 				converters/test_my_int_to_strnum.c \
 				converters/test_my_np_to_str.c \
+				converters/test_my_percentage_to_str.c \
 				converters/test_my_ptr_to_hexa_lower.c \
 				converters/test_my_ptr_to_hexa_upper.c \
 				converters/test_my_uint_to_strnum.c \

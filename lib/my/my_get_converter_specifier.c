@@ -20,7 +20,8 @@ converter_t my_get_converter_specifier(char my_char)
         {'u', &my_uint_to_strnum},
         {'o', &my_decimal_to_octal},
         {'x', &my_decimal_to_hexa_lower}, {'X', &my_decimal_to_hexa_upper},
-        {'p', &my_ptr_to_hexa_lower}, {'P', &my_ptr_to_hexa_upper}
+        {'p', &my_ptr_to_hexa_lower}, {'P', &my_ptr_to_hexa_upper},
+        {'%', &my_percentage_to_str}
     };
 
     while (i < CONVERTERS_SPECIFIERS_NB && my_char != converters[i].symbol)

@@ -10,7 +10,6 @@
 
 char *my_percentage_to_str(va_list args)
 {
-    if (args == NULL)
-        return (NULL);
+    (void)args;
     return ("%");
 }

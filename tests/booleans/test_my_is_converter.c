@@ -83,7 +83,7 @@ Test(my_is_converter, binary_id)
 Test(my_is_converter, not_an_id)
 {
     char my_char = ';';
-    bool actual = 0;
+    bool actual = true;
     bool expected = false;
 
     actual = my_is_converter(my_char);

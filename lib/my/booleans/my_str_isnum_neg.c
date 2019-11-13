@@ -15,6 +15,8 @@ bool my_str_isnum_neg(char const *str)
         if (str[1] == '\0')
             return (false);
         i = i + 1;
+    } else {
+        return (false);
     }
     while (str[i] != '\0') {
         if (str[i] < '0' || str[i] > '9')

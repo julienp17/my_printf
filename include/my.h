@@ -55,4 +55,7 @@
 
     char *my_llint_to_strnum(va_list args);
     char *my_lluint_to_strnum(va_list args);
+    char *my_lluint_to_octal(va_list args);
+    char *my_lluint_to_hexa_lower(va_list args);
+    char *my_lluint_to_hexa_upper(va_list args);
 #endif

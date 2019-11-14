@@ -46,6 +46,9 @@ SRC_F 		=	my_get_converter_specifier.c \
 				converters/my_uint_to_strnum.c \
 				length_modifiers/my_llint_to_strnum.c \
 				length_modifiers/my_lluint_to_strnum.c \
+				length_modifiers/my_lluint_to_octal.c \
+				length_modifiers/my_lluint_to_hexa_lower.c \
+				length_modifiers/my_lluint_to_hexa_upper.c \
 
 
 SRC_UT   	=	$(addprefix $(SRC_UT_D), $(SRC_UT_F))
@@ -81,7 +84,7 @@ SRC_UT_F 	= 	test_my_intlen.c \
 
 INC			= 	-I./include/
 
-CFLAGS		= 	-W -Wall -Wextra -Werror $(INC) $(DBFLAGS)
+CFLAGS		= 	-W -Wall -Wextra -Werror $(INC)
 
 LDFLAGS_UT	= 	-lcriterion -lgcov --coverage
 

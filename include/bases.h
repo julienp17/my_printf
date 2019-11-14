@@ -14,8 +14,9 @@
     #define LLUINT_MAX_LEN          20
     #define OCTAL_CHAR_MAX_LEN      4
     #define OCTAL_UINT_MAX_LEN      11
+    #define OCTAL_LLUINT_MAX_LEN    22
     #define HEXA_MAX_LEN            8
-    #define LU_HEXA_MAX_LEN         14
+    #define LLU_HEXA_MAX_LEN        16
     #define DOUBLE_MAX_LEN          316
 
     #define HEXA_LOWER              "0123456789abcdef"

@@ -12,7 +12,6 @@
 #include <stdlib.h>
 #include "my.h"
 #include "converters.h"
-#include "flags.h"
 #include "length_modifiers.h"
 
 #include <stdio.h>

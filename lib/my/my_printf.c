@@ -76,7 +76,6 @@ char *my_get_format(char const *format_string)
 char *my_get_formatted_string(char *org_format, va_list args)
 {
     char *format = my_strdup(org_format);
-    //char *formatted_string = malloc(sizeof(char) * (my_strlen(format) + 6));
     converter_t converter;
     char *(*length_modifier)(va_list);
 

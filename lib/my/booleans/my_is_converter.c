@@ -8,7 +8,7 @@
 #include <stdbool.h>
 #include "converters.h"
 
-bool my_is_converter(char my_char)
+bool my_is_converter(char const my_char)
 {
     char const converters[] = CONVERTERS_SPECIFIERS;
 

@@ -19,7 +19,7 @@
 int my_print_tokens(char **format_string, va_list args);
 char *my_get_formatted_string(char *format, va_list args);
 char *my_get_format(char const *format_string);
-char *(*my_get_length_modifier(char *str, converter_t converter))(va_list args);
+converter_t *my_get_converter_specifier(char my_char);
 
 int my_printf(char const *str, ...)
 {
@@ -76,8 +76,8 @@ char *my_get_format(char const *format_string)
 char *my_get_formatted_string(char *org_format, va_list args)
 {
     char *format = my_strdup(org_format);
-    converter_t converter;
-    char *(*length_modifier)(va_list);
+    converter_t *converter;
+    length_modifier_t *length_modifier;
 
     if (!my_is_converter(format[my_strlen(format) - 1]))
         return (org_format);
@@ -85,9 +85,12 @@ char *my_get_formatted_string(char *org_format, va_list args)
     converter = my_get_converter_specifier(format[my_strlen(format) - 1]);
     format[my_strlen(format) - 1] = '\0';
     if (!format[0])
-        return (converter.convertion(args));
+        return (converter->convertion(args));
     length_modifier = my_get_length_modifier(format, converter);
-    if (length_modifier)
-        return (length_modifier(args));
+    if (length_modifier) {
+        format[my_strlen(format) - my_strlen(length_modifier->symbols)] = '\0';
+        if (!format[0])
+            return (length_modifier->convertion(args));
+    }
     return (org_format);
 }

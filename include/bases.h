@@ -21,4 +21,5 @@
 
     #define HEXA_LOWER              "0123456789abcdef"
     #define HEXA_UPPER              "0123456789ABCDEF"
+    #define UINT_MAX_STR            "4294967295"
 #endif

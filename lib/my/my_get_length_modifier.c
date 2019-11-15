@@ -18,8 +18,10 @@ static length_modifier_t *get_l_or_ll_length_modifier(char *rev_str,
                                                     converter_t *converter);
 static char *(*get_unsigned_convertion(char symbol))(va_list);
 
-length_modifier_t *my_get_length_modifier(char *str, converter_t *converter)
+length_modifier_t *my_get_length_modifier(char **format, converter_t *converter)
 {
+    char *str = my_strdup((*format));
+
     if (!my_is_int_converter(converter->symbol))
         return (NULL);
     str = my_revstr(str);

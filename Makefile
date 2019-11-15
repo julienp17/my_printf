@@ -12,6 +12,8 @@ OBJ 		= 	$(SRC:.c=.o)
 SRC_D 		= 	lib/my/
 SRC_F 		=	my_get_converter.c \
 				my_get_length_modifier.c \
+				my_get_width_field.c \
+				my_get_precision.c \
 				my_intlen.c \
 				my_putchar.c \
 				my_puterr.c \
@@ -22,8 +24,10 @@ SRC_F 		=	my_get_converter.c \
 				my_strdup.c \
 				my_strlen.c \
 				my_strstr.c \
+				my_strnum_to_uint.c \
 				my_printf.c \
 				booleans/my_is_converter.c \
+				booleans/my_is_digit.c \
 				booleans/my_is_int_converter.c \
 				booleans/my_is_int_signed_converter.c \
 				booleans/my_is_int_unsigned_converter.c \
@@ -105,20 +109,16 @@ tests_run: clean $(OBJ) $(OBJ_UT)
 	@echo -e "\e[1;32mCompiling $(NAME_UT) binary... \e[0m"
 	$(CC) -o $(NAME_UT) $(SRC) $(SRC_UT) $(CFLAGS) $(LDFLAGS_UT)
 	@./$(NAME_UT)
-	rm -f $(SRC_UT_F:.c=.gcda)
-	rm -f $(SRC_UT_F:.c=.gcno)
+	@rm -f $(SRC_UT_F:.c=.gcda)
+	@rm -f $(SRC_UT_F:.c=.gcno)
 
 clean:
 	@echo -e "\e[1;32mRemoving source object files...\e[0m"
 	rm -f $(OBJ)
-	@echo -e "\e[1;32mRemoving source coverage files...\e[0m"
-	rm -f $(SRC_F:.c=.gcda)
-	rm -f $(SRC_F:.c=.gcno)
 	@echo -e "\e[1;32mRemoving unit_tests object files... \e[0m"
 	rm -f $(OBJ_UT)
-	@echo -e "\e[1;32mRemoving unit_tests coverage files...\e[0m"
-	rm -f $(SRC_UT_F:.c=.gcda)
-	rm -f $(SRC_UT_F:.c=.gcno)
+	@echo -e "\e[1;32mRemoving coverage files...\e[0m"
+	rm -f *.gc*
 
 fclean: clean
 	@echo -e "\e[1;32mRemoving $(NAME) binary...\e[0m"

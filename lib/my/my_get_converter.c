@@ -7,7 +7,26 @@
 
 #include <stdlib.h>
 #include "converters.h"
+#include "length_modifiers.h"
 #include "my.h"
+
+converter_t *my_get_converter(char **format)
+{
+    converter_t *converter = NULL;
+    length_modifier_t *length_modifier = NULL;
+    char specifier = (*format)[my_strlen(*format) - 1];
+
+    (*format)[my_strlen(*format) - 1] = '\0';
+    converter = my_get_converter_specifier(specifier);
+    length_modifier = my_get_length_modifier(format, converter);
+    if (length_modifier) {
+        (*format)[my_strlen(*format) - my_strlen(length_modifier->symbols)] = 0;
+        converter->convertion = length_modifier->convertion;
+        free(length_modifier);
+    }
+    return (converter);
+}
+
 
 converter_t *my_get_converter_specifier(char my_char)
 {

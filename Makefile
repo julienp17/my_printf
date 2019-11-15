@@ -10,7 +10,7 @@ CC 			= 	c99
 SRC			= 	$(addprefix $(SRC_D), $(SRC_F))
 OBJ 		= 	$(SRC:.c=.o)
 SRC_D 		= 	lib/my/
-SRC_F 		=	my_get_converter_specifier.c \
+SRC_F 		=	my_get_converter.c \
 				my_get_length_modifier.c \
 				my_intlen.c \
 				my_putchar.c \

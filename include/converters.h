@@ -21,5 +21,6 @@
         char* (*convertion)(va_list args);
     } converter_t ;
 
+    converter_t *my_get_converter(char **format);
     converter_t *my_get_converter_specifier(char my_char);
 #endif

@@ -17,5 +17,5 @@
         char *(*convertion)(va_list args);
     } length_modifier_t;
 
-length_modifier_t *my_get_length_modifier(char *str, converter_t *converter);
+length_modifier_t *my_get_length_modifier(char **str, converter_t *converter);
 #endif

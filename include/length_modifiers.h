@@ -10,8 +10,12 @@
 
     #define LENGTH_MODIFIERS_NB            4
 
+    #include "converters.h"
+
     typedef struct length_modifier {
         char *symbols;
-        char *(*convertion)(char converter_specifier_symbol);
+        char *(*convertion)(va_list args);
     } length_modifier_t;
+
+length_modifier_t *my_get_length_modifier(char *str, converter_t *converter);
 #endif

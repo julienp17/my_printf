@@ -14,12 +14,9 @@
 #include "converters.h"
 #include "length_modifiers.h"
 
-#include <stdio.h>
-
-int my_print_tokens(char **format_string, va_list args);
-char *my_get_formatted_string(char *format, va_list args);
-char *my_get_format(char const *format_string);
-converter_t *my_get_converter_specifier(char my_char);
+static int my_print_tokens(char **format_string, va_list args);
+static char *my_get_formatted_string(char *format, va_list args);
+static char *my_get_format(char const *format_string);
 
 int my_printf(char const *str, ...)
 {
@@ -34,7 +31,7 @@ int my_printf(char const *str, ...)
     return (chars_written);
 }
 
-int my_print_tokens(char **format_string, va_list args)
+static int my_print_tokens(char **format_string, va_list args)
 {
     char *format = NULL;
     char *formatted_string = NULL;
@@ -54,7 +51,7 @@ int my_print_tokens(char **format_string, va_list args)
     return (chars_written);
 }
 
-char *my_get_format(char const *format_string)
+static char *my_get_format(char const *format_string)
 {
     char *format = malloc(sizeof(char) * (my_strlen(format_string) + 1));
     int i = 0;
@@ -73,7 +70,7 @@ char *my_get_format(char const *format_string)
     return (format);
 }
 
-char *my_get_formatted_string(char *org_format, va_list args)
+static char *my_get_formatted_string(char *org_format, va_list args)
 {
     char *format = my_strdup(org_format);
     converter_t *converter;

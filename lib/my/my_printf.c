@@ -79,9 +79,7 @@ static char *my_get_formatted_string(char *org_format, va_list args)
         return (org_format);
     format = format + 1;
     converter = my_get_converter(&format);
-    if (format[0]) {
-        printf("\\format = %s\\\n", format);
+    if (format[0])
         return (org_format);
-    }
     return (converter->convertion(args));
 }

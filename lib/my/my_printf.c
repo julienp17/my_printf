@@ -11,12 +11,14 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include "my.h"
-#include "converters.h"
-#include "length_modifiers.h"
+#include "format.h"
 
 static int my_print_tokens(char **format_string, va_list args);
 static char *my_get_formatted_string(char *format, va_list args);
 static char *my_get_format(char const *format_string);
+static format_t *my_init_format(char *org_format);
+unsigned int my_get_width_field(char **format);
+int my_get_precision(char **format);
 
 int my_printf(char const *str, ...)
 {
@@ -72,14 +74,26 @@ static char *my_get_format(char const *format_string)
 
 static char *my_get_formatted_string(char *org_format, va_list args)
 {
-    char *format = my_strdup(org_format);
-    converter_t *converter;
+    format_t *format = NULL;
 
-    if (!my_is_converter(format[my_strlen(format) - 1]))
+    if (!my_is_converter(org_format[my_strlen(org_format) - 1]))
         return (org_format);
-    format = format + 1;
-    converter = my_get_converter(&format);
-    if (format[0])
-        return (org_format);
-    return (converter->convertion(args));
+    format = my_init_format(org_format);
+    if (format->converter->symbol == '%')
+        return ("%");
+    if (format->precision == -1 || format->format[0])
+        return (format->org_format);
+    return (format->converter->convertion(args));
+}
+
+static format_t *my_init_format(char *org_format)
+{
+    format_t *format = malloc(sizeof(format));;
+
+    format->format = my_strdup(org_format + 1);
+    format->org_format = my_strdup(org_format);
+    format->converter = my_get_converter(&(format->format));
+    format->precision = my_get_precision(&(format->format));
+    format->width = my_get_width_field(&(format->format));
+    return (format);
 }

@@ -5,18 +5,19 @@
 ** Format structure
 */
 
+#include <stdlib.h>
 #include "converters.h"
 #include "my.h"
 
-converter_t my_get_converter_specifier(char my_char)
+converter_t *my_get_converter_specifier(char my_char)
 {
     int i = 0;
+    converter_t *converter = malloc((sizeof(converter)));
     converter_t const converters[] = {
         {'b', &my_decimal_to_binary},
         {'c', &my_char_to_str},
         {'d', &my_int_to_strnum}, {'i', &my_int_to_strnum},
-        {'s', &my_arg_to_str},
-        {'S', &my_np_to_str},
+        {'s', &my_arg_to_str}, {'S', &my_np_to_str},
         {'u', &my_uint_to_strnum},
         {'o', &my_decimal_to_octal},
         {'x', &my_decimal_to_hexa_lower}, {'X', &my_decimal_to_hexa_upper},
@@ -26,5 +27,7 @@ converter_t my_get_converter_specifier(char my_char)
 
     while (i < CONVERTERS_SPECIFIERS_NB && my_char != converters[i].symbol)
         i = i + 1;
-    return (converters[i]);
+    converter->symbol = converters[i].symbol;
+    converter->convertion = converters[i].convertion;
+    return (converter);
 }

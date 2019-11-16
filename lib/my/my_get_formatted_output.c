@@ -43,16 +43,19 @@ static char *init_converted_output(format_t *format, char const *converted)
     return (converted_output);
 }
 
-static char *init_formatted_output(format_t *format, char const *converter)
+static char *init_formatted_output(format_t *format, char const *converted)
 {
     unsigned int i = 0;
-    unsigned int len = my_strlen(converter) + format->width + 2;
-    char *formatted_output = malloc(sizeof(char) * len);
+    unsigned int converted_len = my_strlen(converted);
+    unsigned int len = 0;
+    char *str = malloc(sizeof(char) * (format->width + converted_len + 3));
 
-    while (i < format->width) {
-        formatted_output[i] = ' ';
+    if (format->width > converted_len)
+        len = format->width - converted_len;
+    while (i < len) {
+        str[i] = ' ';
         i++;
     }
-    formatted_output[i] = '\0';
-    return (formatted_output);
+    str[i] = '\0';
+    return (str);
 }

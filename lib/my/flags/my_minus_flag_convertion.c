@@ -8,7 +8,7 @@
 #include <stdbool.h>
 #include "format.h"
 
-void my_minus_flag_convertion(format_t *format, char **converted,
+void my_minus_flag_convertion(format_t *format, char *converted,
                               char **flags_output)
 {
     (void)converted;

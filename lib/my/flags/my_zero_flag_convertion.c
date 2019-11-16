@@ -9,7 +9,7 @@
 #include "format.h"
 #include "my.h"
 
-void my_zero_flag_convertion(format_t *format, char **converted,
+void my_zero_flag_convertion(format_t *format, char *converted,
                             char **flags_output)
 {
     unsigned int i = 0;
@@ -24,5 +24,6 @@ void my_zero_flag_convertion(format_t *format, char **converted,
             (*flags_output)[i] = '0';
             i++;
         }
+        (*flags_output)[i] = '\0';
     }
 }

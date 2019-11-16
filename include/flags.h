@@ -16,16 +16,16 @@
 
     typedef struct flag {
         char symbol;
-        void (*convertion)(format_t *format, char **converted,
+        void (*convertion)(format_t *format, char *converted,
                             char **flags_output);
     } flag_t ;
 
     bool my_is_flag(char my_char);
     flag_t *my_get_flag(char symbol);
 
-    void my_hash_flag_convertion(format_t*, char**, char **);
-    void my_space_flag_convertion(format_t*, char**, char **);
-    void my_zero_flag_convertion(format_t*, char**, char **);
-    void my_minus_flag_convertion(format_t*, char**, char **);
-    void my_plus_flag_convertion(format_t*, char**, char **);
+    void my_hash_flag_convertion(format_t*, char*, char **);
+    void my_space_flag_convertion(format_t*, char*, char **);
+    void my_zero_flag_convertion(format_t*, char*, char **);
+    void my_minus_flag_convertion(format_t*, char*, char **);
+    void my_plus_flag_convertion(format_t*, char*, char **);
 #endif

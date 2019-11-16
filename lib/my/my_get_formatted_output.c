@@ -26,7 +26,7 @@ char *my_get_formatted_output(format_t *format, va_list args)
         if (!my_is_flag(format->format[i]))
             return (format->org_format);
         flag = my_get_flag(format->format[i]);
-        flag->convertion(format, &converted_output, &formatted_output);
+        flag->convertion(format, converted_output, &formatted_output);
         i++;
     }
     if (format->is_right_padded)

@@ -13,13 +13,13 @@
 
 static bool can_convert(format_t *format, char *converted);
 
-void my_plus_flag_convertion(format_t *format, char **converted,
+void my_plus_flag_convertion(format_t *format, char *converted,
                             char **flags_output)
 {
     if (my_strstr(format->format, "0") != NULL) {
         (*flags_output)[0] = '+';
         return;
-    } else if (can_convert(format, (*converted))) {
+    } else if (can_convert(format, converted)) {
         if ((*flags_output)[0]) {
             (*flags_output)[my_strlen(*flags_output) - 1] = '+';
         } else {

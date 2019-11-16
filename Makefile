@@ -97,7 +97,7 @@ SRC_UT_F 	= 	test_my_intlen.c \
 
 INC			= 	-I./include/
 
-CFLAGS		= 	-W -Wall -Wextra -Werror $(INC) $(DBFLAGS)
+CFLAGS		= 	-W -Wall -Wextra -Werror $(INC)
 
 LDFLAGS_UT	= 	-lcriterion -lgcov --coverage
 

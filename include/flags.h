@@ -8,15 +8,24 @@
 #ifndef FLAGS_H_
     #define FLAGS_H_
 
-    #include <stdarg.h>
+    #include <stdbool.h>
+    #include "format.h"
 
     #define FLAGS                          "#0- +"
     #define FLAGS_NB                       5
 
-    struct flag {
+    typedef struct flag {
         char symbol;
-        char* (*convertion)(va_list args);
-    };
+        void (*convertion)(format_t *format, char **converted,
+                            char **flags_output);
+    } flag_t ;
 
-    struct converter_specifier my_get_converter_specifier(char my_char);
+    bool my_is_flag(char my_char);
+    flag_t *my_get_flag(char symbol);
+
+    void my_hash_flag_convertion(format_t*, char**, char **);
+    void my_space_flag_convertion(format_t*, char**, char **);
+    void my_zero_flag_convertion(format_t*, char**, char **);
+    void my_minus_flag_convertion(format_t*, char**, char **);
+    void my_plus_flag_convertion(format_t*, char**, char **);
 #endif

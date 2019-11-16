@@ -6,17 +6,14 @@
 */
 
 #include <stdlib.h>
+#include "my.h"
 
 char *my_strdup(char const *src)
 {
-    int i = 0;
-    char *dest = 0;
+    char *dest = malloc(sizeof(char) * (my_strlen(src) + 1));
+    unsigned int i = 0;
 
-    while (src[i] != '\0')
-        i = i + 1;
-    dest = malloc((i * sizeof(char)) + 1);
-    i = 0;
-    while (src[i] != '\0') {
+    while (src[i]) {
         dest[i] = src[i];
         i = i + 1;
     }

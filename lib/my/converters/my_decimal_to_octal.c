@@ -13,7 +13,7 @@
 char *my_decimal_to_octal(va_list args)
 {
     unsigned int decimal = va_arg(args, unsigned int);
-    char *octal = malloc(sizeof(char) * (OCTAL_UINT_MAX_LEN + 1));
+    char *octal = malloc(sizeof(char) * (OCTAL_UINT_MAX_LEN + 2));
     int digit = 0;
 
     if (decimal == 0)

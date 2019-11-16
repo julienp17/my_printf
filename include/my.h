@@ -10,6 +10,7 @@
 
     #include <stdarg.h>
     #include <stdbool.h>
+    #include "format.h"
 
     #define MY_EXIT_SUCCESS     0
     #define MY_EXIT_FAILURE     84
@@ -35,6 +36,7 @@
     int my_strcmp(char const *s1, char const *s2);
     unsigned int my_strnum_to_uint(char const *strnum);
 
+    char *my_get_formatted_output(format_t *format, va_list args);
     char *my_revstr(char *str);
     char *my_char_to_octal(char my_char);
     char *my_strcat(char *dest, char const *src);

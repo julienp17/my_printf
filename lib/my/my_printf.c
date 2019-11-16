@@ -6,7 +6,7 @@
 */
 
 #include <stdio.h>
-
+#include <stdbool.h>
 #include <stdarg.h>
 #include <stddef.h>
 #include <stdlib.h>
@@ -81,19 +81,20 @@ static char *my_get_formatted_string(char *org_format, va_list args)
     format = my_init_format(org_format);
     if (format->converter->symbol == '%')
         return ("%");
-    if (format->precision == -1 || format->format[0])
+    if (format->precision == -1)
         return (format->org_format);
-    return (format->converter->convertion(args));
+    return (my_get_formatted_output(format, args));
 }
 
 static format_t *my_init_format(char *org_format)
 {
-    format_t *format = malloc(sizeof(format));;
+    format_t *format = malloc(sizeof(*format));
 
     format->format = my_strdup(org_format + 1);
     format->org_format = my_strdup(org_format);
     format->converter = my_get_converter(&(format->format));
     format->precision = my_get_precision(&(format->format));
     format->width = my_get_width_field(&(format->format));
+    format->is_right_padded = true;
     return (format);
 }

@@ -14,7 +14,7 @@ char *my_decimal_to_hexa_lower(va_list args)
 {
     unsigned int decimal = va_arg(args, unsigned int);
     char base[] = HEXA_LOWER;
-    char *hexa = malloc(sizeof(char) * (HEXA_MAX_LEN + 1));
+    char *hexa = malloc(sizeof(char) * (HEXA_MAX_LEN + 3));
     int digit = 0;
 
     if (decimal == 0)

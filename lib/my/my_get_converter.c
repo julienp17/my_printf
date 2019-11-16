@@ -27,11 +27,10 @@ converter_t *my_get_converter(char **format)
     return (converter);
 }
 
-
 converter_t *my_get_converter_specifier(char my_char)
 {
     int i = 0;
-    converter_t *converter = malloc((sizeof(converter)));
+    converter_t *converter = malloc(sizeof(*converter));
     converter_t const converters[] = {
         {'b', &my_decimal_to_binary},
         {'c', &my_char_to_str},

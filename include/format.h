@@ -8,6 +8,7 @@
 #ifndef FORMAT_H_
     #define FORMAT_H_
 
+    #include <stdbool.h>
     #include "converters.h"
 
     typedef struct format {
@@ -16,5 +17,6 @@
         unsigned int width;
         int precision;
         converter_t *converter;
+        bool is_right_padded;
     } format_t;
 #endif

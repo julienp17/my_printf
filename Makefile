@@ -14,6 +14,8 @@ SRC_F 		=	my_get_converter.c \
 				my_get_length_modifier.c \
 				my_get_width_field.c \
 				my_get_precision.c \
+				my_get_flag.c \
+				my_get_formatted_output.c \
 				my_intlen.c \
 				my_putchar.c \
 				my_puterr.c \
@@ -28,6 +30,7 @@ SRC_F 		=	my_get_converter.c \
 				my_printf.c \
 				booleans/my_is_converter.c \
 				booleans/my_is_digit.c \
+				booleans/my_is_flag.c \
 				booleans/my_is_int_converter.c \
 				booleans/my_is_int_signed_converter.c \
 				booleans/my_is_int_unsigned_converter.c \
@@ -48,6 +51,11 @@ SRC_F 		=	my_get_converter.c \
 				converters/my_ptr_to_hexa_lower.c \
 				converters/my_ptr_to_hexa_upper.c \
 				converters/my_uint_to_strnum.c \
+				flags/my_hash_flag_convertion.c \
+				flags/my_minus_flag_convertion.c \
+				flags/my_plus_flag_convertion.c \
+				flags/my_space_flag_convertion.c \
+				flags/my_zero_flag_convertion.c \
 				length_modifiers/my_llint_to_strnum.c \
 				length_modifiers/my_lluint_to_strnum.c \
 				length_modifiers/my_lluint_to_octal.c \
@@ -88,7 +96,7 @@ SRC_UT_F 	= 	test_my_intlen.c \
 
 INC			= 	-I./include/
 
-CFLAGS		= 	-W -Wall -Wextra -Werror $(INC)
+CFLAGS		= 	-W -Wall -Wextra -Werror $(INC) $(DBFLAGS)
 
 LDFLAGS_UT	= 	-lcriterion -lgcov --coverage
 

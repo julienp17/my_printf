@@ -15,8 +15,8 @@ static char *init_formatted_output(format_t *format, char const *converter);
 
 char *my_get_formatted_output(format_t *format, va_list args)
 {
-    char *converted = format->converter->convertion(args);
-    char *formatted_output = init_formatted_output(format, converted);
+    char *converted_output = my_strdup(format->converter->convertion(args));
+    char *formatted_output = init_formatted_output(format, converted_output);
     flag_t *flag;
     unsigned int i = 0;
 
@@ -24,12 +24,12 @@ char *my_get_formatted_output(format_t *format, va_list args)
         if (!my_is_flag(format->format[i]))
             return (format->org_format);
         flag = my_get_flag(format->format[i]);
-        flag->convertion(format, &converted, &formatted_output);
+        flag->convertion(format, &converted_output, &formatted_output);
         i++;
     }
     if (format->is_right_padded)
-        return (my_strcat(formatted_output, converted));
-    return (my_strcat(converted, formatted_output));
+        return (my_strcat(formatted_output, converted_output));
+    return (my_strcat(converted_output, formatted_output));
 }
 
 static char *init_formatted_output(format_t *format, char const *converter)

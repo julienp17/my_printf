@@ -36,7 +36,7 @@ char *my_get_formatted_output(format_t *format, va_list args)
 
 static char *init_converted_output(format_t *format, char const *converted)
 {
-    unsigned int len = my_strlen(converted) + format->width + 2;
+    unsigned int len = my_strlen(converted) + format->width + 3;
     char *converted_output = malloc(sizeof(char) * len);
 
     converted_output = my_strcpy(converted_output, converted);

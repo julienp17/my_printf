@@ -20,6 +20,11 @@
                             char **flags_output);
     } flag_t ;
 
+    typedef struct hash_flag {
+        char symbol;
+        char *to_put;
+    } hash_flag_t;
+
     bool my_is_flag(char my_char);
     flag_t *my_get_flag(char symbol);
 

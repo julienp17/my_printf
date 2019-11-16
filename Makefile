@@ -23,6 +23,7 @@ SRC_F 		=	my_get_converter.c \
 				my_revstr.c \
 				my_strcat.c \
 				my_strcmp.c \
+				my_strcpy.c \
 				my_strdup.c \
 				my_strlen.c \
 				my_strstr.c \
@@ -96,7 +97,7 @@ SRC_UT_F 	= 	test_my_intlen.c \
 
 INC			= 	-I./include/
 
-CFLAGS		= 	-W -Wall -Wextra -Werror $(INC)
+CFLAGS		= 	-W -Wall -Wextra -Werror $(INC) $(DBFLAGS)
 
 LDFLAGS_UT	= 	-lcriterion -lgcov --coverage
 

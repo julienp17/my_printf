@@ -40,6 +40,7 @@
     char *my_revstr(char *str);
     char *my_char_to_octal(char my_char);
     char *my_strcat(char *dest, char const *src);
+    char *my_strcpy(char *dest, char const *src);
     char *my_strdup(char const *src);
     char *my_strstr(char const *str, char const *to_find);
 

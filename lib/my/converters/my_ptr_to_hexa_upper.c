@@ -26,6 +26,7 @@ char *my_ptr_to_hexa_upper(va_list args)
         address = address / 16;
     }
     hexa[i++] = 'x';
-    hexa[i] = '0';
+    hexa[i++] = '0';
+    hexa[i] = '\0';
     return (my_revstr(hexa));
 }

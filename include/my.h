@@ -34,6 +34,8 @@
     int my_strlen(char const *str);
     int my_intlen(int nb);
     int my_strcmp(char const *s1, char const *s2);
+    int my_get_precision(char **format);
+    unsigned int my_get_width_field(char **format);
     unsigned int my_strnum_to_uint(char const *strnum);
 
     char *my_get_formatted_output(format_t *format, va_list args);

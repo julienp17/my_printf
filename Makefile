@@ -96,6 +96,7 @@ SRC_UT_F 	= 	test_my_intlen.c \
 				flags/test_my_hash_flag_convertion.c \
 				flags/test_my_plus_flag_convertion.c \
 				flags/test_my_space_flag_convertion.c \
+				flags/test_my_minus_flag_convertion.c \
 				length_modifiers/test_my_llint_to_strnum.c \
 				length_modifiers/test_my_lluint_to_strnum.c \
 

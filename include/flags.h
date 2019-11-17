@@ -25,8 +25,8 @@
         char *to_put;
     } hash_flag_t;
 
-    bool my_is_flag(char my_char);
-    flag_t *my_get_flag(char symbol);
+    bool my_is_flag(char const my_char);
+    flag_t *my_get_flag(char const symbol);
 
     void my_hash_flag_convertion(format_t *, char *, char **);
     void my_space_flag_convertion(format_t *, char *, char **);

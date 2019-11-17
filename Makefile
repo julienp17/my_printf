@@ -74,6 +74,7 @@ SRC_UT_F 	= 	test_my_intlen.c \
 				test_my_puterr.c \
 				booleans/test_my_is_printable.c \
 				booleans/test_my_is_converter.c \
+				booleans/test_my_is_flag.c \
 				booleans/test_my_is_int_converter.c \
 				booleans/test_my_is_int_signed_converter.c \
 				booleans/test_my_is_int_unsigned_converter.c \
@@ -92,6 +93,7 @@ SRC_UT_F 	= 	test_my_intlen.c \
 				converters/test_my_ptr_to_hexa_lower.c \
 				converters/test_my_ptr_to_hexa_upper.c \
 				converters/test_my_uint_to_strnum.c \
+				flags/test_my_hash_flag_convertion.c \
 				length_modifiers/test_my_llint_to_strnum.c \
 				length_modifiers/test_my_lluint_to_strnum.c \
 

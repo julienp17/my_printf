@@ -8,7 +8,7 @@
 #include <stdbool.h>
 #include "flags.h"
 
-bool my_is_flag(char my_char)
+bool my_is_flag(char const my_char)
 {
     char const flags[] = FLAGS;
 

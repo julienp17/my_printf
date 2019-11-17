@@ -91,6 +91,24 @@ Test(my_hash_flag_convertion, hexa_upper_uintmax, .init = cr_redirect_stdout)
     cr_assert_stdout_eq_str(expected);
 }
 
+Test(my_hash_flag_convertion, with_width_hexa, .init = cr_redirect_stdout)
+{
+    unsigned int hexa_lower = 105;
+    char const expected[] = " 0x69";
+
+    my_printf("%#5x", hexa_lower);
+    cr_assert_stdout_eq_str(expected);
+}
+
+Test(my_hash_flag_convertion, with_width_octal, .init = cr_redirect_stdout)
+{
+    unsigned int octal = 777;
+    char const expected[] = "[           01411]";
+
+    my_printf("[%#16o]", octal);
+    cr_assert_stdout_eq_str(expected);
+}
+
 Test(my_hash_flag_convertion, no_convertion, .init = cr_redirect_stdout)
 {
     unsigned int decimal = 84;

@@ -69,10 +69,11 @@ OBJ_UT 	 	=	$(SRC_UT:.c=.o)
 SRC_UT_D 	= 	tests/
 SRC_UT_F 	= 	test_my_intlen.c \
 				test_my_char_to_octal.c \
-				test_my_printf_no_args.c \
+				test_my_printf_special_cases.c \
 				test_my_strcat.c \
 				test_my_puterr.c \
 				test_my_get_flag.c \
+				test_my_strnum_to_uint.c \
 				booleans/test_my_is_printable.c \
 				booleans/test_my_is_converter.c \
 				booleans/test_my_is_flag.c \

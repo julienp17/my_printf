@@ -18,7 +18,7 @@ void my_zero_flag_convertion(format_t *format, char *converted,
     if (my_strstr(format->format, "-") != NULL || format->precision > 0)
         return;
     if (my_is_int_converter(format->converter->symbol)) {
-        if ((*flags_output)[i] == '+')
+        if ((*flags_output)[i] == '+' || my_strstr(format->format, " ") != NULL)
             i++;
         while ((*flags_output)[i]) {
             (*flags_output)[i] = '0';

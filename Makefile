@@ -48,7 +48,6 @@ SRC_F 		=	my_get_converter.c \
 				converters/my_decimal_to_octal.c \
 				converters/my_int_to_strnum.c \
 				converters/my_np_to_str.c \
-				converters/my_percentage_to_str.c \
 				converters/my_ptr_to_hexa_lower.c \
 				converters/my_ptr_to_hexa_upper.c \
 				converters/my_uint_to_strnum.c \
@@ -99,8 +98,10 @@ SRC_UT_F 	= 	test_my_intlen.c \
 				flags/test_my_plus_flag_convertion.c \
 				flags/test_my_space_flag_convertion.c \
 				flags/test_my_minus_flag_convertion.c \
-				length_modifiers/test_my_llint_to_strnum.c \
-				length_modifiers/test_my_lluint_to_strnum.c \
+				length_modifiers/test_my_h_length_modifier.c \
+				length_modifiers/test_my_hh_length_modifier.c \
+				length_modifiers/test_my_l_length_modifier.c \
+				length_modifiers/test_my_ll_length_modifier.c \
 
 INC			= 	-I./include/
 

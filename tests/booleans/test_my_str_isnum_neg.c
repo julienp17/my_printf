@@ -59,6 +59,16 @@ Test(my_str_isnum_neg, all_alpha_neg_sign_at_beginning)
     cr_assert_eq(actual, expected);
 }
 
+Test(my_str_isnum_neg, only_symbols)
+{
+    char str[] = "-!";
+    bool actual = false;
+    bool expected = false;
+
+    actual = my_str_isnum_neg(str);
+    cr_assert_eq(actual, expected);
+}
+
 Test(my_str_isnum_neg, int_min)
 {
     char str[] = "-2147483648";

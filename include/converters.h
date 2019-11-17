@@ -18,7 +18,7 @@
 
     typedef struct converter_specifier {
         char symbol;
-        char* (*convertion)(va_list args);
+        char *(*convertion)(va_list args);
     } converter_t ;
 
     converter_t *my_get_converter(char **format);

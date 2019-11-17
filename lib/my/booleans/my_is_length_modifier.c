@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2019
 ** my_printf
 ** File description:
-** Returns true if the given chars is a printf flag, false otherwise
+** Returns true if the given chars are a length modifier flag, false otherwise
 */
 
 #include <stdbool.h>

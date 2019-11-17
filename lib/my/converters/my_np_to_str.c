@@ -13,7 +13,7 @@ int my_strlen_np(char const *str);
 
 char *my_np_to_str(va_list args)
 {
-    char *org_str = va_arg(args, char*);
+    char *org_str = va_arg(args, char *);
     char *str = malloc(sizeof(char) * (my_strlen_np(org_str) + 1));
     unsigned int i = 0;
     unsigned int j = 0;

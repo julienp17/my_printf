@@ -10,5 +10,5 @@
 
 char *my_arg_to_str(va_list args)
 {
-    return (va_arg(args, char*));
+    return (va_arg(args, char *));
 }

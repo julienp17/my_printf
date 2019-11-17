@@ -17,8 +17,6 @@ static int my_print_tokens(char **format_string, va_list args);
 static char *my_get_formatted_string(char *format, va_list args);
 static char *my_get_format(char const *format_string);
 static format_t *my_init_format(char *org_format);
-unsigned int my_get_width_field(char **format);
-int my_get_precision(char **format);
 
 int my_printf(char const *str, ...)
 {

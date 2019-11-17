@@ -78,3 +78,13 @@ Test(my_str_isnum_pos, nega_zero)
     actual = my_str_isnum_pos(str);
     cr_assert_eq(actual, expected);
 }
+
+Test(my_str_isnum_pos, empty_str)
+{
+    char str[] = "";
+    bool actual = false;
+    bool expected = false;
+
+    actual = my_str_isnum_pos(str);
+    cr_assert_eq(actual, expected);
+}

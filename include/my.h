@@ -21,6 +21,7 @@
 
     bool my_is_converter(char const my_char);
     bool my_is_digit(char const my_char);
+    bool my_is_flag(char const my_char);
     bool my_is_int_converter(char my_char);
     bool my_is_printable(char const my_char);
     bool my_is_int_converter(char my_char);

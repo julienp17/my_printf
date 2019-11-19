@@ -12,6 +12,7 @@
 ### Usage
 
 ![USAGE](bonus/printf_format_string.png)
+
 _from the [wikipedia page on printf](https://en.wikipedia.org/wiki/Printf_format_string#Syntax)_
 
 See the [man of printf](https://linux.die.net/man/3/printf) for more information
@@ -19,6 +20,7 @@ See the [man of printf](https://linux.die.net/man/3/printf) for more information
 ### Example
 
 ![Example](bonus/printf_example.png)
+
 _from the [wikipedia page on printf](https://en.wikipedia.org/wiki/Printf_format_string)_
 
 ### Grade

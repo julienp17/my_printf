@@ -18,7 +18,7 @@
         char symbol;
         void (*convertion)(format_t *format, char *converted,
                             char **flags_output);
-    } flag_t ;
+    } flag_t;
 
     typedef struct hash_flag {
         char symbol;
